@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import Wrapper from "@/comps/Wrapper";
+import "../globals.css";
+import Sidebar from "@/comps/Sidebar";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +11,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div className="flex min-h-screen ">
+          <Sidebar />
+          <main className="flex-1">
+          <Wrapper><div className="px-4 py-7">{children}</div></Wrapper>
+          </main>
+        </div>
+      </body>
     </html>
   );
 }
