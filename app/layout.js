@@ -1,7 +1,8 @@
-
 import Wrapper from "@/comps/Wrapper";
-import "../globals.css";
+import "./globals.css";
 import Sidebar from "@/comps/Sidebar";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,11 +12,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <div className="flex min-h-screen ">
+      <body className="w-full">
+        <div className="flex min-h-screen w-screen">
           <Sidebar />
           <main className="flex-1">
-          <Wrapper><div className="px-4 py-7">{children}</div></Wrapper>
+            <Wrapper>
+              <div className="px-4 py-7">{children}</div>
+            </Wrapper>
           </main>
         </div>
       </body>
