@@ -8,9 +8,9 @@ export const BestAppData = [
     subcategory: "Wallet",
     img: (
       <Image
-        src={require("../assets/Tweedo.jpeg")}
-        width={100}
-        height={100}
+        src={require("../assets/Rectangle 17 (1).svg")}
+      
+        
       />
     ),
     rate: 4.5
@@ -21,9 +21,9 @@ export const BestAppData = [
     category: "Social Media",
     img: (
       <Image
-      src={require("../assets/logo12.jpeg")}
-        width={100}
-        height={100}
+      src={require("../assets/Rectangle 17 (1).svg")}
+      
+        
       />
     ),
     rate: 4.5
@@ -35,9 +35,9 @@ export const BestAppData = [
     subcategory: "Payments",
     img: (
       <Image
-      src={require("../assets/Beachbuggy.jpeg")}
-        width={100}
-        height={100}
+      src={require("../assets/Rectangle 17 (1).svg")}
+      
+        
       />
     ),
     rate: 4.5
@@ -50,8 +50,8 @@ export const BestAppData = [
     img: (
       <Image
       src={require("../assets/Rectangle 17 (1).svg")}
-        width={100}
-        height={100}
+      
+        
       />
     ),
     rate: 4.5
@@ -64,7 +64,7 @@ export const BestAppData = [
     img: (
       <Image
       src={require("../assets/Rectangle 17 (2).svg")}
-        width={100}
+      
       />
     ),
     rate: 4.5
@@ -76,8 +76,8 @@ export const BestAppData = [
     img: (
       <Image
       src={require("../assets/Rectangle 17 (3).svg")}
-        width={100}
-        height={100}
+      
+        
       />
     ),
     rate: 4.5
@@ -89,8 +89,8 @@ export const BestAppData = [
     img: (
       <Image
       src={require("../assets/Rectangle 17 (4).svg")}
-        width={100}
-        height={100}
+      
+        
       />
     ),
     rate: 4.5
@@ -103,8 +103,8 @@ export const BestAppData = [
     img: (
       <Image
       src={require("../assets/Rectangle 17 (5).svg")}
-        width={100}
-        height={100}
+      
+        
       />
     ),
     rate: 4.5
@@ -116,8 +116,8 @@ export const BestAppData = [
     img: (
       <Image
       src={require("../assets/Rectangle 17 (6).svg")}
-        width={100}
-        height={100}
+      
+        
       />
     ),
     rate: 4.5

@@ -9,13 +9,14 @@ import { usePathname } from "next/navigation";
 const Sidebar = () => {
   const path = usePathname()
   return (
-    <div className="fixed h-screen border-r sidebar">
+    <div className="fixed h-screen border-r sidebar ">
     <Image
+    className="logo"
         src={require("../assets/Upar - logo 1.svg")}
         width={40}
         height={40}
       />
-      <ul className="flex flex-col nav gap-y-3">
+      <ul className="flex flex-col nav gap-y-3 list-none">
         {SideNavItem.map((item, index) => {
           return (
             <li key={index} className={`list-none ${item.path === path ? 'text-bold' : ''}`}>

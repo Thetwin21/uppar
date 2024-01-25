@@ -1,17 +1,20 @@
 "use client";
-import List from "@/comps/TopchartList";
 import NavWrapper from "@/comps/Nav-wrapper";
 import Navbar from "@/comps/Navbar";
-import ImageSlider from "@/comps/Slider";
 import { TopchartData } from "@/data/TopchartData";
 import Image from "next/image";
 import Slider from "react-slick";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { NewArrivals } from "@/data/NewArrivals";
 
 export default function Home() {
   return (
     <section className="home">
       <NavWrapper>
-        <h2 className="text-3xl font-bold">
+        <h2 className="text-4xl font-bold ">
           Discover: Experience more in the decentralized web
         </h2>
         <Navbar />
@@ -26,22 +29,22 @@ export default function Home() {
 }
 export function SponsoredAdd() {
   return (
-    <div>
+    <div className="mt-8 mb-10">
       <div className="flex gap-x-3">
         <Image
           src={require("../assets/image 1.svg")}
-          width={320}
-          height={150}
+          width={420}
+          height={250}
         />
         <Image
           src={require("../assets/image 1.svg")}
-          width={320}
-          height={150}
+          width={420}
+          height={250}
         />
         <Image
           src={require("../assets/image 1.svg")}
-          width={320}
-          height={150}
+          width={420}
+          height={250}
         />
       </div>
     </div>
@@ -127,37 +130,40 @@ export function Recommended() {
     initialSlide: 0,
     // infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    // slidesToShow: 'auto',
+    autoSlidesToShow: true,
+    variableWidth: true,
     slidesToScroll: 3,
     // nextArrow: <NextArrow />,
     // prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 5,
-        },
-      },
-      {
-        breakpoint: 1000,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 650,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+    // responsive: [
+    //   {
+    //     breakpoint: 1280,
+    //     settings: {
+    //       slidesToShow: 'auto',
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 1000,
+    //     settings: {
+    //       slidesToShow: 4,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 650,
+    //     settings: {
+    //       slidesToShow: 1,
+    //     },
+    //   },
+    // ],
     // afterchange: (current) => {
     //   setProgress((100 / (data.length - slidesToShow + 1)) * (current + 1));
     //   console.log(slidesToShow);
     // },
   };
   return (
-    <div className="recommended-container my-5">
+    <div className="recommended-container mb-10">
+      <h3 className="mb-5">Recommended for you</h3>
       <div className="slider-container bg-black">
         <div className="slider bg-yellow-50 overflow-x-hidden">
           <Slider {...settings}>
@@ -175,16 +181,25 @@ export function Recommended() {
 
 export function Topchart() {
   return (
-    <div className="max-w-[100%] w-96 md:w-[36rem] lg:w-[48rem]">
-      <h3>Top Chart</h3>
+    <div className="max-w-[100%] w-96 md:w-[36rem] lg:w-[48rem] mb-10">
+      <h3 className="mb-5">Top Chart</h3>
       <div>
-        <div className="w-full grid grid-cols-4 gap-3 my-10">
-          <button className="border-[0.4px] p-1 cursor-pointer rounded-sm">
+        <div className="w-full grid grid-cols-4 gap-3 mb-5">
+          <button
+            className="border-[0.4px] p-1 cursor-pointer rounded-sm text-[#BBDB18] bg-[
+#BBDB18]"
+          >
             Mobile
           </button>
-          <button>Desktop</button>
-          <button>Free</button>
-          <button>Paid</button>
+          <button className="border-[0.4px] p-1 cursor-pointer rounded-sm">
+            Desktop
+          </button>
+          <button className="border-[0.4px] p-1 cursor-pointer rounded-sm">
+            Free
+          </button>
+          <button className="border-[0.4px] p-1 cursor-pointer rounded-sm">
+            Paid
+          </button>
         </div>
         <ol className="w-full grid grid-cols-3 gap-4 list-decimal list-outside pl-3 marker:text-blue-700">
           {TopchartData.map((item, index) => (
@@ -212,28 +227,42 @@ export function Topchart() {
 }
 export function BestApp() {
   return (
-    <div>
-      <div className="w-full bg-[#290000] flex">
-        <div>
+    <div className={"mb-10"}>
+      <div className=" w-full bg-[#290000] flex items-center">
+        <div className="w-[300px]">
+          <h3 className="text-[#fff] mt-5 ml-5">The Best Apps of 2023</h3>
           <Image src={require("../assets/Golden_.png")} />
         </div>
-        <div>
-          <div className="flex gap-x-5">
-            {TopchartData.map((item, index) => (
-              <div className="flex flex-col gap-y-1 justify-center text-[#ffffff]"> 
-                <div>{item.img}</div>
-                <div className="flex flex-col text-[13px] font-semibold">
-                  <span>{item.category}</span>
-                  <span>{item.rate}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className={"best-app"}></div>
       </div>
     </div>
   );
 }
 export function NewArrival() {
-  return <div>New Arrival</div>;
+  return (
+    <div className="mb-10">
+      <h3 className="mb-5">New Arrivals - Under Validation</h3>
+
+      <ul className="w-full grid grid-cols-5 gap-4 list-decimal list-outside pl-3 marker:text-blue-700">
+        {NewArrivals.map((item, index) => (
+          <li key={item.id} className="flex gap-3 topchart-list">
+            <div>{item.img}</div>
+            <div className="flex flex-col">
+              <h4 className="text=[24px] font-bold">{item.name}</h4>
+              {item.subcategory ? (
+                <span className="text-[12px] font-semibold">
+                  {item.category} {item.subcategory}
+                </span>
+              ) : (
+                <span className="text-[12px] font-semibold">
+                  {item.category}
+                </span>
+              )}
+              <span className="">{item.rate}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
